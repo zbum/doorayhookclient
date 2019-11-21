@@ -1,4 +1,4 @@
-package com.nhnent.dooray.client;
+package com.nhn.dooray.client;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
