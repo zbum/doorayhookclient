@@ -6,6 +6,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * RestTemplate 을 활용하여 DoorayHook 을 발송하는 클래스
+ */
 public class DoorayHookSender {
 
     private RestTemplate resttemplate;
@@ -20,7 +23,7 @@ public class DoorayHookSender {
     public void send(DoorayHook doorayHook) {
         HttpHeaders headers = new HttpHeaders();
 
-        HttpEntity<DoorayHook> entity = new HttpEntity<DoorayHook>(doorayHook, headers);
+        HttpEntity<DoorayHook> entity = new HttpEntity<>(doorayHook, headers);
         ResponseEntity<String> exchange = resttemplate.exchange(url, HttpMethod.POST, entity, String.class);
     }
 
